@@ -3,7 +3,7 @@ Advanced Orchestrator with Full Gemini Integration
 """
 
 from typing import Dict, Any, Optional
-from loguru import logger
+# from loguru import logger
 import os
 from pydantic import BaseModel, Field
 
@@ -37,7 +37,7 @@ class AdvancedOrchestrator:
                 google_api_key=self.api_key,
                 temperature=0.1
             )
-            logger.info("✅ Advanced Orchestrator initialized with Gemini 2.0")
+            # logger.info("✅ Advanced Orchestrator initialized with Gemini 2.0")
     
     async def analyze_with_ai(self, query: str, context: Optional[Dict] = None) -> AgentRouting:
         """
@@ -95,7 +95,7 @@ Return JSON with: agent, confidence (0-1), reasoning, parameters (extracted enti
             )
             
         except Exception as e:
-            logger.error(f"AI routing failed: {e}")
+            # logger.error(f"AI routing failed: {e}")
             return await self._keyword_routing(query)
     
     async def _keyword_routing(self, query: str) -> AgentRouting:

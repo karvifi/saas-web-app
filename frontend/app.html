@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -172,7 +173,9 @@
         }
 
         @keyframes spin {
-            to { transform: rotate(360deg); }
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         .pricing-section {
@@ -309,13 +312,25 @@
         }
 
         @media (max-width: 768px) {
-            h1 { font-size: 32px; }
-            .search-box { flex-direction: column; }
-            .pricing-grid { grid-template-columns: 1fr; }
-            .price-card.featured { transform: scale(1); }
+            h1 {
+                font-size: 32px;
+            }
+
+            .search-box {
+                flex-direction: column;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .price-card.featured {
+                transform: scale(1);
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <header>
@@ -330,7 +345,8 @@
             </div>
 
             <div class="chips">
-                <div class="chip" onclick="setQuery('Find me Python developer jobs in Berlin')">💼 Find Python jobs</div>
+                <div class="chip" onclick="setQuery('Find me Python developer jobs in Berlin')">💼 Find Python jobs
+                </div>
                 <div class="chip" onclick="setQuery('Monitor price of iPhone 15 Pro')">💰 Price alerts</div>
                 <div class="chip" onclick="setQuery('Plan route from Berlin to Munich')">🚂 Travel routes</div>
                 <div class="chip" onclick="setQuery('Find restaurants open now near me')">🍽️ Nearby spots</div>
@@ -359,7 +375,8 @@
                         <li class="excluded">❌ Job auto-apply</li>
                         <li class="excluded">❌ Price monitoring</li>
                     </ul>
-                    <button class="price-button secondary" onclick="subscribe('free', 'demo@example.com')">Get Started</button>
+                    <button class="price-button secondary" onclick="subscribe('free', 'demo@example.com')">Get
+                        Started</button>
                 </div>
 
                 <!-- Professional (FEATURED) -->
@@ -375,7 +392,8 @@
                         <li class="included">✅ Webhooks & API</li>
                         <li class="included">✅ Email support</li>
                     </ul>
-                    <button class="price-button primary" onclick="subscribe('professional', 'demo@example.com')">Start Free Trial</button>
+                    <button class="price-button primary" onclick="subscribe('professional', 'demo@example.com')">Start
+                        Free Trial</button>
                 </div>
 
                 <!-- Enterprise -->
@@ -483,4 +501,5 @@
         });
     </script>
 </body>
+
 </html>

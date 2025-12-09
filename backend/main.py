@@ -79,7 +79,7 @@ async def lifespan(app: FastAPI):
         print("   - Professional Services")
         print("🌍 Platform ready to serve the world!")
         print("✅ Startup completed successfully")
-        print("🔄 Yielding lifespan context...")
+        logger.info("🚀 AI Agent Platform started successfully")
     except Exception as e:
         print(f"❌ Startup error: {e}")
         import traceback
@@ -89,6 +89,7 @@ async def lifespan(app: FastAPI):
     # Shutdown
     try:
         print("🛑 Shutting down AI Agent Platform")
+        logger.info("🛑 AI Agent Platform shut down")
     except Exception as e:
         print(f"❌ Shutdown error: {e}")
 
@@ -141,12 +142,21 @@ class TaskRequest(BaseModel):
 async def root():
     """Landing page"""
     try:
+        print("🔍 Root endpoint called")
         file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "frontend", "index.html")
         print(f"Serving file: {file_path}")
         print(f"File exists: {os.path.exists(file_path)}")
-        return FileResponse(file_path)
+        with open(file_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+        print(f"Content length: {len(content)}")
+        from fastapi.responses import HTMLResponse
+        print("Returning HTMLResponse")
+        return HTMLResponse(content=content, status_code=200)
     except Exception as e:
         print(f"Error serving root: {e}")
+        import traceback
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=f"Error serving page: {str(e)}")
         import traceback
         traceback.print_exc()
         raise
@@ -154,7 +164,15 @@ async def root():
 @app.get("/app")
 async def app_page():
     """Main application"""
-    return FileResponse(os.path.join(os.path.dirname(os.path.dirname(__file__)), "frontend", "app.html"))
+    try:
+        file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "frontend", "app.html")
+        with open(file_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+        from fastapi.responses import HTMLResponse
+        return HTMLResponse(content=content, status_code=200)
+    except Exception as e:
+        print(f"Error serving app: {e}")
+        raise HTTPException(status_code=500, detail=f"Error serving app page: {str(e)}")
 
 # @app.post("/api/v1/subscribe")
 # async def create_subscription(user_id: str, plan: str, email: str):
