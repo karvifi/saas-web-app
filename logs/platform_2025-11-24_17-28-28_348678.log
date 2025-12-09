@@ -1,0 +1,4 @@
+2025-11-24 17:28:28.348 | INFO     | main:startup_event:76 - 🚀 AI Agent Platform v2.0 starting...
+2025-11-24 17:28:28.348 | INFO     | main:startup_event:77 - ✅ All specialized agents loaded
+2025-11-24 17:28:28.348 | INFO     | main:startup_event:78 - 🔑 Gemini API: ✅ Configured
+2025-11-24 17:28:28.348 | INFO     | main:startup_event:83 - ✅ Platform ready - All systems operational

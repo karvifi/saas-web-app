@@ -1,0 +1,217 @@
+"""
+AI Agent Platform - Updated Main Backend with All Agents
+"""
+
+from fastapi import FastAPI, HTTPException, BackgroundTasks
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
+from pydantic import BaseModel, Field
+from typing import Optional, Dict, Any, List
+import os
+import sys
+from datetime import datetime
+from loguru import logger
+import asyncio
+
+# Add project root to path
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from dotenv import load_dotenv
+load_dotenv()
+
+# Import all agents
+from agents.orchestrator import orchestrator
+from agents.search import search_agent
+from agents.career import career_agent
+from agents.travel import travel_agent
+from agents.local import local_agent
+
+# Configure logger
+logger.add(
+    "logs/platform_{time}.log",
+    rotation="500 MB",
+    retention="10 days",
+    level="INFO"
+)
+
+# Initialize FastAPI
+app = FastAPI(
+    title="AI Agent Platform",
+    description="Unified AI Operating System - Better Than Google",
+    version="2.0.0",
+    docs_url="/docs",
+    redoc_url="/redoc"
+)
+
+# CORS Configuration
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# ==================== REQUEST MODELS ====================
+
+class TaskRequest(BaseModel):
+    query: str = Field(..., description="User's natural language query")
+    user_id: str = Field(default="anonymous", description="User identifier")
+    context: Optional[Dict[str, Any]] = Field(default=None, description="Additional context")
+    priority: str = Field(default="normal", description="Task priority")
+
+class TaskResponse(BaseModel):
+    status: str
+    task_id: str
+    query: str
+    result: Optional[Any] = None
+    execution_time: float
+    agent_used: Optional[str] = None
+    timestamp: str
+
+# ==================== STARTUP ====================
+
+@app.on_event("startup")
+async def startup_event():
+    logger.info("🚀 AI Agent Platform v2.0 starting...")
+    logger.info("✅ All specialized agents loaded")
+    logger.info(f"🔑 Gemini API: {'✅ Configured' if os.getenv('GOOGLE_API_KEY') else '❌ Missing'}")
+    
+    os.makedirs("logs", exist_ok=True)
+    os.makedirs("data/cache", exist_ok=True)
+    
+    logger.info("✅ Platform ready - All systems operational")
+
+# ==================== CORE ENDPOINTS ====================
+
+@app.get("/")
+async def root():
+    return {
+        "platform": "AI Agent Platform",
+        "version": "2.0.0",
+        "status": "operational",
+        "tagline": "The Unified AI Operating System - Better Than Google",
+        "agents": {
+            "orchestrator": "active",
+            "search": "active",
+            "career": "active",
+            "travel": "active",
+            "local": "active",
+            "browser": "ready"
+        }
+    }
+
+@app.get("/health")
+async def health_check():
+    return {
+        "status": "healthy",
+        "version": "2.0.0",
+        "timestamp": datetime.utcnow().isoformat(),
+        "services": {
+            "api": "operational",
+            "gemini": "configured" if os.getenv('GOOGLE_API_KEY') else "not_configured",
+            "agents": "all_active"
+        }
+    }
+
+@app.post("/api/v1/execute", response_model=TaskResponse)
+async def execute_task(request: TaskRequest):
+    """
+    Main execution endpoint - Now with REAL agent execution
+    """
+    start_time = datetime.utcnow()
+    task_id = f"task_{int(start_time.timestamp() * 1000)}"
+    
+    logger.info(f"📨 Task: {task_id} | Query: {request.query}")
+    
+    try:
+        # Step 1: Orchestrator analyzes and routes
+        routing = await orchestrator.route_task(request.query, request.context)
+        agent_type = routing['target_agent']
+        
+        logger.info(f"🎯 Routed to: {agent_type}")
+        
+        # Step 2: Execute with appropriate agent
+        result = None
+        
+        if agent_type == "search":
+            search_result = await search_agent.search(request.query)
+            result = search_result
+            
+        elif agent_type == "career":
+            # Extract job details from query
+            jobs = await career_agent.search_jobs(request.query)
+            result = {
+                "jobs_found": len(jobs),
+                "jobs": jobs[:5],
+                "message": f"Found {len(jobs)} matching positions"
+            }
+            
+        elif agent_type == "travel":
+            # Parse travel query (simple extraction)
+            words = request.query.lower().split()
+            if "to" in words:
+                to_idx = words.index("to")
+                from_city = " ".join(words[to_idx-1:to_idx]) if to_idx > 0 else "current location"
+                to_city = " ".join(words[to_idx+1:to_idx+2]) if to_idx < len(words)-1 else "destination"
+                
+                route_result = await travel_agent.get_route(from_city, to_city, mode="train")
+                result = route_result
+            else:
+                result = {"message": "Please specify from and to locations"}
+                
+        elif agent_type == "local":
+            # Extract service and location
+            service = request.query.split("near")[0].strip() if "near" in request.query else request.query
+            location = request.query.split("near")[1].strip() if "near" in request.query else "current location"
+            
+            places = await local_agent.find_nearby(service, location)
+            result = {
+                "places_found": len(places),
+                "places": places,
+                "query": service,
+                "location": location
+            }
+        
+        else:
+            # Default search fallback
+            result = await search_agent.search(request.query)
+        
+        execution_time = (datetime.utcnow() - start_time).total_seconds()
+        
+        response = TaskResponse(
+            status="success",
+            task_id=task_id,
+            query=request.query,
+            result=result,
+            execution_time=execution_time,
+            agent_used=agent_type,
+            timestamp=datetime.utcnow().isoformat()
+        )
+        
+        logger.info(f"✅ Task {task_id} completed in {execution_time:.2f}s")
+        return response
+        
+    except Exception as e:
+        logger.error(f"❌ Task {task_id} failed: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/api/v1/agents")
+async def list_agents():
+    return {
+        "agents": {
+            "orchestrator": {"status": "active", "description": "Routes queries"},
+            "search": {"status": "active", "description": "Multi-source web search"},
+            "career": {"status": "active", "description": "Job search & applications"},
+            "travel": {"status": "active", "description": "Transportation & routes"},
+            "local": {"status": "active", "description": "Nearby services"},
+            "browser": {"status": "ready", "description": "Browser automation"}
+        }
+    }
+
+# ==================== RUN SERVER ====================
+
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.getenv("BACKEND_PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=True)
