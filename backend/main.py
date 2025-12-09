@@ -79,6 +79,7 @@ async def lifespan(app: FastAPI):
         print("   - Professional Services")
         print("🌍 Platform ready to serve the world!")
         print("✅ Startup completed successfully")
+        print("🔄 Yielding lifespan context...")
     except Exception as e:
         print(f"❌ Startup error: {e}")
         import traceback
@@ -127,7 +128,7 @@ app = FastAPI(
         # print(f"❌ Shutdown error: {e}")
 
 # Serve static files
-app.mount("/static", StaticFiles(directory="frontend"), name="static")
+app.mount("/static", StaticFiles(directory=os.path.join(os.path.dirname(os.path.dirname(__file__)), "frontend")), name="static")
 
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
 
@@ -139,83 +140,104 @@ class TaskRequest(BaseModel):
 @app.get("/")
 async def root():
     """Landing page"""
-    return FileResponse("frontend/index.html")
+    try:
+        file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "frontend", "index.html")
+        print(f"Serving file: {file_path}")
+        print(f"File exists: {os.path.exists(file_path)}")
+        return FileResponse(file_path)
+    except Exception as e:
+        print(f"Error serving root: {e}")
+        import traceback
+        traceback.print_exc()
+        raise
 
-# Minimal test
-@app.get("/test")
-async def test():
-    return {"message": "Test endpoint working"}
+@app.get("/app")
+async def app_page():
+    """Main application"""
+    return FileResponse(os.path.join(os.path.dirname(os.path.dirname(__file__)), "frontend", "app.html"))
 
 # @app.post("/api/v1/subscribe")
 # async def create_subscription(user_id: str, plan: str, email: str):
-    # """Create checkout session for subscription"""
-    # if plan == "free":
-        # profile_manager.update_user(user_id, {
-            # "subscription": "free",
-            # "email": email,
-            # "subscribed_at": datetime.now().isoformat()
-        # })
-        # return {
-            # "status": "success",
-            # "plan": "free",
-            # "message": "Free tier activated"
-        # }
+@app.post("/api/v1/subscribe")
+async def create_subscription(user_id: str, plan: str, email: str):
+    """Create checkout session for subscription"""
+    if plan == "free":
+        profile_manager.update_user(user_id, {
+            "subscription": "free",
+            "email": email,
+            "subscribed_at": datetime.now().isoformat()
+        })
+        return {
+            "status": "success",
+            "plan": "free",
+            "message": "Free tier activated"
+        }
     
-    # result = await StripeService.create_checkout_session(user_id, plan, email)
-    # return result
+    result = await StripeService.create_checkout_session(user_id, plan, email)
+    return result
 
 # @app.get("/api/v1/subscription/{user_id}")
 # async def get_subscription_status(user_id: str):
-    # """Check user subscription status"""
-    # status = await StripeService.check_subscription_status(user_id)
-    # user_profile = profile_manager.get_user(user_id)
+@app.get("/api/v1/subscription/{user_id}")
+async def get_subscription_status(user_id: str):
+    """Check user subscription status"""
+    status = await StripeService.check_subscription_status(user_id)
+    user_profile = profile_manager.get_user(user_id)
     
-    # return {
-        # "status": "success",
-        # "subscription": status,
-        # "user_profile": user_profile
-    # }
+    return {
+        "status": "success",
+        "subscription": status,
+        "user_profile": user_profile
+    }
 
 # @app.post("/api/v1/webhook/stripe")
 # async def stripe_webhook(request: dict):
-    # """Handle Stripe webhooks"""
-    # result = await StripeService.handle_webhook(request)
+@app.post("/api/v1/webhook/stripe")
+async def stripe_webhook(request: dict):
+    """Handle Stripe webhooks"""
+    result = await StripeService.handle_webhook(request)
     
-    # if result.get("action") == "activate_subscription":
-        # profile_manager.update_user(
-            # result["user_id"],
-            # {"subscription": result["plan"]}
-        # )
+    if result.get("action") == "activate_subscription":
+        profile_manager.update_user(
+            result["user_id"],
+            {"subscription": result["plan"]}
+        )
     
-    # return {"status": "received"}
+    return {"status": "received"}
 
 # @app.get("/api/v1/pricing")
 # async def get_pricing():
-    # """Get pricing tiers"""
-    # return {
-        # "status": "success",
-        # "pricing": StripeService.PLANS
-    # }
+@app.get("/api/v1/pricing")
+async def get_pricing():
+    """Get pricing tiers"""
+    return {
+        "status": "success",
+        "pricing": StripeService.PLANS
+    }
 
 # @app.get("/api/v1/stats")
 # async def get_platform_stats():
-    # """Get platform statistics"""
-    # return {
-        # "status": "success",
-        # "agents": 11,
-        # "coverage": "100% of human online activities",
-        # "features": [
-            # "Job auto-application",
-            # "Price monitoring",
-            # "Travel planning",
-            # "Web search",
-            # "Productivity automation",
-            # "Transaction handling"
-        # ]
-    # }
+@app.get("/api/v1/stats")
+async def get_platform_stats():
+    """Get platform statistics"""
+    return {
+        "status": "success",
+        "agents": 11,
+        "coverage": "100% of human online activities",
+        "features": [
+            "Job auto-application",
+            "Price monitoring",
+            "Travel planning",
+            "Web search",
+            "Productivity automation",
+            "Transaction handling"
+        ]
+    }
 
 # @app.post("/api/v1/execute")
 # async def execute_final(request: TaskRequest):
+@app.post("/api/v1/execute")
+async def execute_final(request: TaskRequest):
 #     """FINAL COMPLETE EXECUTION"""
     start_time = datetime.utcnow()
     task_id = f"task_{int(start_time.timestamp() * 1000)}"
