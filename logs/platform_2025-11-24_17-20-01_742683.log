@@ -1,6 +1,0 @@
-2025-11-24 17:20:02.223 | INFO     | main:startup_event:78 - 🚀 AI Agent Platform starting...
-2025-11-24 17:20:02.223 | INFO     | main:startup_event:79 - 📍 Environment: DEBUG
-2025-11-24 17:20:02.223 | INFO     | main:startup_event:80 - 🔑 Gemini API: ✅ Configured
-2025-11-24 17:20:02.223 | INFO     | main:startup_event:87 - ✅ Platform ready - All systems operational
-2025-11-24 17:20:03.538 | INFO     | main:shutdown_event:92 - 🛑 AI Agent Platform shutting down...
-2025-11-24 17:20:03.539 | INFO     | main:shutdown_event:93 - ✅ Cleanup complete
