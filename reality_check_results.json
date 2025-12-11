@@ -1,0 +1,26 @@
+{
+  "career_agent": {
+    "basic_search": false,
+    "auto_apply_attempt": false
+  },
+  "database": {
+    "stats_endpoint": true,
+    "stats_structure": true
+  },
+  "authentication": {
+    "no_auth_required": true
+  },
+  "subscription_enforcement": {
+    "no_limits": true
+  },
+  "error_handling": {
+    "graceful_errors": true
+  },
+  "integrations": {
+    "remoteok_api": false,
+    "travel_planning": false,
+    "shopping": false,
+    "entertainment": false
+  },
+  "overall_score": 10.0
+}

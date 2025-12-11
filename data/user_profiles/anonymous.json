@@ -1,0 +1,47 @@
+{
+  "user_id": "anonymous",
+  "created_at": "2025-12-10T21:36:02.657332",
+  "subscription": "free",
+  "email": null,
+  "requests": [],
+  "preferences": {},
+  "task_history": [
+    {
+      "agent_type": "career",
+      "query": "find python jobs",
+      "agent_name": "career",
+      "success": 1.15342,
+      "execution_time": true,
+      "result_summary": null,
+      "timestamp": "2025-12-10T21:36:02.657332"
+    },
+    {
+      "agent_type": "career",
+      "query": "find python developer jobs",
+      "agent_name": "career",
+      "success": 0.924071,
+      "execution_time": true,
+      "result_summary": null,
+      "timestamp": "2025-12-10T21:36:55.328571"
+    },
+    {
+      "agent_type": "search",
+      "query": "search for restaurants in Berlin",
+      "agent_name": "search",
+      "success": 0.539238,
+      "execution_time": true,
+      "result_summary": null,
+      "timestamp": "2025-12-10T21:36:55.899739"
+    },
+    {
+      "agent_type": "search",
+      "query": "find movies about AI",
+      "agent_name": "search",
+      "success": 0.577251,
+      "execution_time": true,
+      "result_summary": null,
+      "timestamp": "2025-12-10T21:36:56.494015"
+    }
+  ],
+  "updated_at": "2025-12-10T21:36:56.494015"
+}

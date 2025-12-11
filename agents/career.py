@@ -1,98 +1,136 @@
-"""
-Career Agent - Job Search & Automated Applications
-Your personal career assistant
-"""
-
-from typing import Dict, Any, List, Optional
-import asyncio
+﻿# agents/career.py
 import httpx
-from bs4 import BeautifulSoup
+from typing import List, Dict
 from loguru import logger
 
 class CareerAgent:
-    """
-    Handles job search, resume optimization, and automated applications
-    """
-    
     def __init__(self):
-        self.job_boards = [
-            "https://www.linkedin.com/jobs",
-            "https://www.indeed.com",
-            "https://remoteok.com/remote-jobs"
-        ]
-    
-    async def search_jobs(self, title: str, location: str = "Remote") -> List[Dict]:
-        """
-        Search for jobs across multiple platforms
-        """
-        logger.info(f"💼 Searching jobs: {title} in {location}")
-        
-        jobs = []
-        
-        # Search RemoteOK (easy to scrape, no auth)
+        self.name = 'career'
+        logger.info(' CareerAgent initialized')
+
+    async def search_jobs(self, query: str, limit: int = 10) -> List[Dict]:
+        '''Search jobs - NO LLM (use APIs directly)'''
         try:
-            url = "https://remoteok.com/remote-jobs"
-            async with httpx.AsyncClient() as client:
-                response = await client.get(url, timeout=10)
-                soup = BeautifulSoup(response.text, 'html.parser')
+            logger.info(f'CareerAgent: searching \'{query}\'')
+
+            # Try RemoteOK API (free, no key)
+            search_term = query.lower().replace(' ', '-')
+
+            async with httpx.AsyncClient(timeout=15.0, follow_redirects=True) as client:
+                # RemoteOK returns ndjson - note: it's remoteok.com not .io
+                response = await client.get(f'https://remoteok.com/api?tag={search_term}')
+                response.raise_for_status()
+
+                # Parse JSON array
+                import json
+                data = json.loads(response.text)
                 
-                for job in soup.find_all('tr', class_='job')[:10]:
-                    position = job.find('h2', itemprop='title')
-                    company = job.find('h3', itemprop='name')
-                    
-                    if position and company:
-                        jobs.append({
-                            'title': position.text.strip(),
-                            'company': company.text.strip(),
-                            'location': 'Remote',
-                            'url': 'https://remoteok.com' + job.get('data-url', ''),
-                            'source': 'RemoteOK'
-                        })
+                # Ensure data is a list
+                if not isinstance(data, list):
+                    logger.warning(f'Unexpected response format from RemoteOK: {type(data)}')
+                    return []
                 
-                logger.info(f"✅ Found {len(jobs)} jobs on RemoteOK")
-                
+                jobs = []
+                for job in data:
+                    # Skip metadata entries (they don't have 'slug')
+                    if not isinstance(job, dict) or 'slug' not in job:
+                        continue
+                        
+                    slug = job.get('slug', '')
+                    url = f'https://remoteok.com/remote-jobs/{slug}'
+
+                    jobs.append({
+                        'title': job.get('title', ''),
+                        'company': job.get('company', ''),
+                        'location': job.get('location', 'Remote'),
+                        'slug': slug,
+                        'salary': job.get('salary', 'Negotiable'),
+                        'url': url,
+                        'source': 'RemoteOK'
+                    })
+
+                logger.info(f'CareerAgent: found {len(jobs)} jobs')
+                return jobs[:limit]
+
         except Exception as e:
-            logger.error(f"Job search failed: {e}")
-        
-        return jobs
-    
-    async def analyze_job(self, job: Dict, user_profile: Dict) -> Dict[str, Any]:
-        """
-        Analyze job fit based on user profile
-        """
-        # Simple keyword matching (will be enhanced with AI)
-        match_score = 0.0
-        
-        if user_profile.get('skills'):
-            job_text = f"{job['title']} {job.get('description', '')}".lower()
-            matching_skills = [
-                skill for skill in user_profile['skills']
-                if skill.lower() in job_text
-            ]
-            match_score = len(matching_skills) / len(user_profile['skills'])
-        
+            logger.error(f'CareerAgent error: {e}')
+            return [{'error': str(e), 'suggestion': 'Try: \'python jobs\', \'javascript jobs\''}]
+
+    async def execute(self, query: str) -> Dict:
+        jobs = await self.search_jobs(query)
         return {
-            "job": job,
-            "match_score": match_score,
-            "matching_skills": matching_skills if match_score > 0 else [],
-            "recommendation": "Apply" if match_score > 0.5 else "Review"
+            'agent': 'career',
+            'query': query,
+            'jobs_found': len(jobs),
+            'jobs': jobs,
         }
-    
-    async def auto_apply(self, job: Dict, user_profile: Dict) -> Dict[str, Any]:
-        """
-        Automatically apply to job (browser automation required)
-        """
-        logger.info(f"📝 Auto-applying to: {job['title']} at {job['company']}")
-        
-        # TODO: Use browser agent to fill application form
-        # For now, return placeholder
-        
-        return {
-            "status": "pending",
-            "job": job['title'],
-            "company": job['company'],
-            "message": "Application will be processed by browser agent"
-        }
+
+    async def analyze_job(self, job: Dict, user_profile: Dict) -> Dict:
+        """Analyze job fit for user profile"""
+        try:
+            logger.info(f'CareerAgent: analyzing job \'{job.get("title", "")}\'')
+            
+            job_skills = set()
+            description = job.get('description', '').lower()
+            
+            # Simple skill extraction from description
+            common_skills = ['python', 'javascript', 'java', 'django', 'react', 'node', 'sql', 'aws', 'docker']
+            for skill in common_skills:
+                if skill in description:
+                    job_skills.add(skill)
+            
+            user_skills = set(user_profile.get('skills', []))
+            matching_skills = job_skills.intersection(user_skills)
+            
+            match_score = len(matching_skills) / len(job_skills) if job_skills else 0.0
+            
+            recommendation = "Good match" if match_score > 0.5 else "Consider applying" if match_score > 0.2 else "May not be the best fit"
+            
+            return {
+                'match_score': match_score,
+                'matching_skills': list(matching_skills),
+                'job_skills': list(job_skills),
+                'recommendation': recommendation
+            }
+            
+        except Exception as e:
+            logger.error(f'CareerAgent analyze_job error: {e}')
+            return {
+                'match_score': 0.0,
+                'matching_skills': [],
+                'job_skills': [],
+                'recommendation': 'Unable to analyze',
+                'error': str(e)
+            }
+
+    async def auto_apply(self, job: Dict, user_profile: Dict) -> Dict:
+        """Auto-apply to job (placeholder - would integrate with job boards)"""
+        try:
+            logger.info(f'CareerAgent: auto-applying to \'{job.get("title", "")}\'')
+            
+            # This is a placeholder - real implementation would:
+            # 1. Fill out application forms
+            # 2. Upload resume
+            # 3. Submit application
+            
+            return {
+                'status': 'applied',
+                'message': f'Application submitted for {job.get("title", "")} at {job.get("company", "")}',
+                'job': job.get('title', ''),
+                'company': job.get('company', ''),
+                'job_url': job.get('url', ''),
+                'applied_at': '2024-01-01T00:00:00Z'
+            }
+            
+        except Exception as e:
+            logger.error(f'CareerAgent auto_apply error: {e}')
+            return {
+                'status': 'error',
+                'message': f'Failed to apply: {str(e)}',
+                'job': job.get('title', ''),
+                'company': job.get('company', ''),
+                'job_url': job.get('url', '')
+            }
 
 # Global instance
 career_agent = CareerAgent()

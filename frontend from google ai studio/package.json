@@ -1,0 +1,30 @@
+{
+    "name": "ai-agent-platform-frontend",
+    "version": "1.0.0",
+    "description": "Frontend for AI Agent Platform - Complete AI Operating System",
+    "main": "index.html",
+    "scripts": {
+        "start": "npx serve . -p 3000",
+        "dev": "npx serve . -p 3000 --cors",
+        "build": "echo 'Static files - no build needed'",
+        "preview": "npx serve . -p 3000"
+    },
+    "keywords": [
+        "ai",
+        "agents",
+        "automation",
+        "frontend",
+        "fastapi",
+        "google-ai-studio"
+    ],
+    "author": "AI Agent Platform",
+    "license": "MIT",
+    "devDependencies": {
+        "serve": "^14.2.1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/your-repo/ai-agent-platform"
+    },
+    "homepage": "https://aiagentplatform.com"
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent Platform - Execute Tasks</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="/">🤖 AI Agent Platform</a>
+            </div>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/stats" class="nav-link">Statistics</a>
+                <span id="user-status" class="user-status">Not logged in</span>
+                <button id="login-btn" class="btn-secondary" onclick="showAuthModal()">Login</button>
+                <button id="logout-btn" class="btn-secondary" onclick="logout()" style="display: none;">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="app-main">
+        <div class="container">
+            <div class="app-header">
+                <h1>Execute AI Tasks</h1>
+                <p>Describe what you want to accomplish and our AI agents will handle it.</p>
+            </div>
+
+            <div class="task-form">
+                <div class="form-group">
+                    <label for="task-input">Task Description</label>
+                    <textarea id="task-input"
+                        placeholder="e.g., Find me software engineering jobs in San Francisco with salaries over $120k"
+                        rows="4"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="agent-select">Preferred Agent (Optional)</label>
+                    <select id="agent-select">
+                        <option value="">Auto-select (Recommended)</option>
+                        <option value="browser">Browser Agent</option>
+                        <option value="career">Career Agent</option>
+                        <option value="search">Search Agent</option>
+                        <option value="travel">Travel Agent</option>
+                        <option value="transaction">Transaction Agent</option>
+                        <option value="productivity">Productivity Agent</option>
+                        <option value="entertainment">Entertainment Agent</option>
+                        <option value="communication">Communication Agent</option>
+                        <option value="job_automation">Job Automation Agent</option>
+                        <option value="monitoring">Monitoring Agent</option>
+                    </select>
+                </div>
+
+                <button id="execute-btn" class="btn-primary btn-large" onclick="executeTask()">
+                    <span id="btn-text">Execute Task</span>
+                    <div id="btn-spinner" class="spinner" style="display: none;"></div>
+                </button>
+            </div>
+
+            <div id="results-section" class="results-section" style="display: none;">
+                <div class="results-header">
+                    <h2>Task Results</h2>
+                    <button class="btn-secondary" onclick="clearResults()">Clear</button>
+                </div>
+                <div id="results-content" class="results-content">
+                    <!-- Results will be displayed here -->
+                </div>
+            </div>
+
+            <div id="error-section" class="error-section" style="display: none;">
+                <div class="error-content">
+                    <h3>Error</h3>
+                    <p id="error-message"></p>
+                    <button class="btn-secondary" onclick="hideError()">Dismiss</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Authentication Modal -->
+    <div id="auth-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="auth-title">Login</h2>
+                <span class="modal-close" onclick="hideAuthModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="login-form">
+                    <form onsubmit="handleLogin(event)">
+                        <div class="form-group">
+                            <label for="login-email">Email</label>
+                            <input type="email" id="login-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Password</label>
+                            <input type="password" id="login-password" required>
+                        </div>
+                        <button type="submit" class="btn-primary">Login</button>
+                    </form>
+                    <p class="auth-switch">Don't have an account? <a href="#" onclick="showRegisterForm()">Register</a>
+                    </p>
+                </div>
+                <div id="register-form" style="display: none;">
+                    <form onsubmit="handleRegister(event)">
+                        <div class="form-group">
+                            <label for="register-email">Email</label>
+                            <input type="email" id="register-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-password">Password</label>
+                            <input type="password" id="register-password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-first-name">First Name</label>
+                            <input type="text" id="register-first-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="register-last-name">Last Name</label>
+                            <input type="text" id="register-last-name">
+                        </div>
+                        <button type="submit" class="btn-primary">Register</button>
+                    </form>
+                    <p class="auth-switch">Already have an account? <a href="#" onclick="showLoginForm()">Login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

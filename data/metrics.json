@@ -1,0 +1,1334 @@
+{
+  "tasks": [
+    {
+      "task_id": "task_123",
+      "user_id": "test_user_123",
+      "agent_type": "career",
+      "query": "find jobs",
+      "execution_time": 1.5,
+      "success": true,
+      "result_summary": "Found 5 jobs",
+      "timestamp": "2025-12-10T02:58:37.285105"
+    },
+    {
+      "task_id": "task_123",
+      "user_id": "test_user_123",
+      "agent_type": "career",
+      "query": "find jobs",
+      "execution_time": 1.5,
+      "success": true,
+      "result_summary": "Found 5 jobs",
+      "timestamp": "2025-12-10T02:58:47.066600"
+    },
+    {
+      "task_id": "task_123",
+      "user_id": "test_user_123",
+      "agent_type": "career",
+      "query": "find jobs",
+      "execution_time": 1.5,
+      "success": true,
+      "result_summary": "Found 5 jobs",
+      "timestamp": "2025-12-10T02:58:54.252142"
+    },
+    {
+      "task_id": "task_1765336335802",
+      "user_id": "test_user",
+      "agent_type": "career",
+      "query": "Find Python developer jobs in Berlin",
+      "execution_time": 1.569435,
+      "success": true,
+      "result_summary": "Agent: career | Jobs: 20",
+      "timestamp": "2025-12-10T04:12:17.550866"
+    },
+    {
+      "task_id": "task_1765336339582",
+      "user_id": "test_user",
+      "agent_type": "career",
+      "query": "Apply to Python developer jobs automatically",
+      "execution_time": 9.538908,
+      "success": true,
+      "result_summary": "Agent: career",
+      "timestamp": "2025-12-10T04:12:29.661453"
+    },
+    {
+      "task_id": "task_1765336353745",
+      "user_id": "hacker_user",
+      "agent_type": "search",
+      "query": "test",
+      "execution_time": 0.737565,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:12:34.585928"
+    },
+    {
+      "task_id": "task_1765336356631",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test query 0",
+      "execution_time": 0.664801,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:12:37.475955"
+    },
+    {
+      "task_id": "task_1765336359614",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test query 1",
+      "execution_time": 0.831823,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:12:41.180180"
+    },
+    {
+      "task_id": "task_1765336363332",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test query 2",
+      "execution_time": 0.595943,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:12:44.110959"
+    },
+    {
+      "task_id": "task_1765336366229",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test query 3",
+      "execution_time": 0.549053,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:12:47.703960"
+    },
+    {
+      "task_id": "task_1765336369845",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test query 4",
+      "execution_time": 0.60435,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:12:51.674258"
+    },
+    {
+      "task_id": "task_1765336373791",
+      "user_id": "test_user",
+      "agent_type": "search",
+      "query": "",
+      "execution_time": 0.553119,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:12:54.526160"
+    },
+    {
+      "task_id": "task_1765336376575",
+      "user_id": "test_user",
+      "agent_type": "career",
+      "query": "Find remote Python jobs",
+      "execution_time": 0.573402,
+      "success": true,
+      "result_summary": "Agent: career | Jobs: 20",
+      "timestamp": "2025-12-10T04:12:57.524176"
+    },
+    {
+      "task_id": "task_1765336379557",
+      "user_id": "test_user",
+      "agent_type": "search",
+      "query": "Plan a trip from Berlin to Munich",
+      "execution_time": 0.582676,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:13:00.338391"
+    },
+    {
+      "task_id": "task_1765336382396",
+      "user_id": "test_user",
+      "agent_type": "search",
+      "query": "Find cheap laptops",
+      "execution_time": 0.589893,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:13:03.523074"
+    },
+    {
+      "task_id": "task_1765336385583",
+      "user_id": "test_user",
+      "agent_type": "entertainment",
+      "query": "Find action movies",
+      "execution_time": 0.007344,
+      "success": true,
+      "result_summary": "Agent: entertainment",
+      "timestamp": "2025-12-10T04:13:05.778020"
+    },
+    {
+      "task_id": "task_1765336493365",
+      "user_id": "test_user",
+      "agent_type": "career",
+      "query": "Find Python developer jobs in Berlin",
+      "execution_time": 0.609948,
+      "success": true,
+      "result_summary": "Agent: career | Jobs: 20",
+      "timestamp": "2025-12-10T04:14:54.672970"
+    },
+    {
+      "task_id": "task_1765336496913",
+      "user_id": "test_user",
+      "agent_type": "career",
+      "query": "Apply to Python developer jobs automatically",
+      "execution_time": 1.76269,
+      "success": true,
+      "result_summary": "Agent: career",
+      "timestamp": "2025-12-10T04:14:58.760567"
+    },
+    {
+      "task_id": "task_1765336503083",
+      "user_id": "hacker_user",
+      "agent_type": "search",
+      "query": "test",
+      "execution_time": 0.559206,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:15:04.459932"
+    },
+    {
+      "task_id": "task_1765336506991",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test query 0",
+      "execution_time": 0.550275,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:15:08.508550"
+    },
+    {
+      "task_id": "task_1765336511611",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test query 1",
+      "execution_time": 0.579769,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:15:12.290629"
+    },
+    {
+      "task_id": "task_1765336514606",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test query 2",
+      "execution_time": 0.58128,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:15:16.348566"
+    },
+    {
+      "task_id": "task_1765336518805",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test query 3",
+      "execution_time": 0.574045,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:15:19.472430"
+    },
+    {
+      "task_id": "task_1765336522457",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test query 4",
+      "execution_time": 0.539468,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:15:23.088140"
+    },
+    {
+      "task_id": "task_1765336527458",
+      "user_id": "test_user",
+      "agent_type": "career",
+      "query": "Find remote Python jobs",
+      "execution_time": 0.494807,
+      "success": true,
+      "result_summary": "Agent: career | Jobs: 20",
+      "timestamp": "2025-12-10T04:15:28.953449"
+    },
+    {
+      "task_id": "task_1765336531104",
+      "user_id": "test_user",
+      "agent_type": "search",
+      "query": "Plan a trip from Berlin to Munich",
+      "execution_time": 0.564604,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:15:32.768985"
+    },
+    {
+      "task_id": "task_1765336535438",
+      "user_id": "test_user",
+      "agent_type": "search",
+      "query": "Find cheap laptops",
+      "execution_time": 0.547922,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:15:36.851412"
+    },
+    {
+      "task_id": "task_1765336539283",
+      "user_id": "test_user",
+      "agent_type": "entertainment",
+      "query": "Find action movies",
+      "execution_time": 0.0,
+      "success": true,
+      "result_summary": "Agent: entertainment",
+      "timestamp": "2025-12-10T04:15:39.392677"
+    },
+    {
+      "task_id": "task_1765336552199",
+      "user_id": "test_user",
+      "agent_type": "career",
+      "query": "Find Python developer jobs in Berlin",
+      "execution_time": 0.514389,
+      "success": true,
+      "result_summary": "Agent: career | Jobs: 20",
+      "timestamp": "2025-12-10T04:15:53.879014"
+    },
+    {
+      "task_id": "task_1765336556564",
+      "user_id": "test_user",
+      "agent_type": "career",
+      "query": "Apply to Python developer jobs automatically",
+      "execution_time": 0.003108,
+      "success": true,
+      "result_summary": "Agent: career",
+      "timestamp": "2025-12-10T04:15:56.672654"
+    },
+    {
+      "task_id": "task_1765336560917",
+      "user_id": "hacker_user",
+      "agent_type": "search",
+      "query": "test",
+      "execution_time": 0.708367,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:16:02.100602"
+    },
+    {
+      "task_id": "task_1765336564346",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test query 0",
+      "execution_time": 0.668684,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:16:06.145986"
+    },
+    {
+      "task_id": "task_1765336569390",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test query 1",
+      "execution_time": 0.637177,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:16:10.383558"
+    },
+    {
+      "task_id": "task_1765336572894",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test query 2",
+      "execution_time": 0.585151,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:16:13.614974"
+    },
+    {
+      "task_id": "task_1765336575997",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test query 3",
+      "execution_time": 0.602526,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:16:17.385244"
+    },
+    {
+      "task_id": "task_1765336579973",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test query 4",
+      "execution_time": 0.564697,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:16:21.416000"
+    },
+    {
+      "task_id": "task_1765336585999",
+      "user_id": "test_user",
+      "agent_type": "career",
+      "query": "Find remote Python jobs",
+      "execution_time": 0.518982,
+      "success": true,
+      "result_summary": "Agent: career | Jobs: 20",
+      "timestamp": "2025-12-10T04:16:26.790385"
+    },
+    {
+      "task_id": "task_1765336590086",
+      "user_id": "test_user",
+      "agent_type": "search",
+      "query": "Plan a trip from Berlin to Munich",
+      "execution_time": 0.575138,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:16:30.997161"
+    },
+    {
+      "task_id": "task_1765336667861",
+      "user_id": "free_user",
+      "agent_type": "career",
+      "query": "Apply for software engineer jobs in remote locations",
+      "execution_time": 2.396308,
+      "success": true,
+      "result_summary": "Agent: career",
+      "timestamp": "2025-12-10T04:17:51.067787"
+    },
+    {
+      "task_id": "task_1765336676800",
+      "user_id": "free_user",
+      "agent_type": "career",
+      "query": "Apply for this software engineer job",
+      "execution_time": 0.0,
+      "success": true,
+      "result_summary": "Agent: career",
+      "timestamp": "2025-12-10T04:17:56.899527"
+    },
+    {
+      "task_id": "task_1765336689117",
+      "user_id": "free_user",
+      "agent_type": "career",
+      "query": "Apply for this software engineer job",
+      "execution_time": 0.016513,
+      "success": true,
+      "result_summary": "Agent: career",
+      "timestamp": "2025-12-10T04:18:09.232593"
+    },
+    {
+      "task_id": "task_1765336701260",
+      "user_id": "free_user",
+      "agent_type": "career",
+      "query": "Apply for this software engineer job",
+      "execution_time": 0.019138,
+      "success": true,
+      "result_summary": "Agent: career",
+      "timestamp": "2025-12-10T04:18:21.385562"
+    },
+    {
+      "task_id": "task_1765336999299",
+      "user_id": "free_user",
+      "agent_type": "career",
+      "query": "Apply for this software engineer job",
+      "execution_time": 11.117463,
+      "success": true,
+      "result_summary": "Agent: career",
+      "timestamp": "2025-12-10T04:23:30.979534"
+    },
+    {
+      "task_id": "task_1765337023945",
+      "user_id": "hacker_user",
+      "agent_type": "search",
+      "query": "test",
+      "execution_time": 0.633434,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:23:45.746436"
+    },
+    {
+      "task_id": "task_1765337027996",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test query 0",
+      "execution_time": 0.568601,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:23:49.805223"
+    },
+    {
+      "task_id": "task_1765337032316",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test query 1",
+      "execution_time": 0.554822,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:23:54.032104"
+    },
+    {
+      "task_id": "task_1765337036365",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test query 2",
+      "execution_time": 0.597306,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:23:58.214584"
+    },
+    {
+      "task_id": "task_1765337040546",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test query 3",
+      "execution_time": 0.532265,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:24:02.249796"
+    },
+    {
+      "task_id": "task_1765337044924",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test query 4",
+      "execution_time": 0.626558,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:24:05.798677"
+    },
+    {
+      "task_id": "task_1765337089791",
+      "user_id": "free_user",
+      "agent_type": "career",
+      "query": "Apply for this software engineer job",
+      "execution_time": 0.005034,
+      "success": true,
+      "result_summary": "Agent: career",
+      "timestamp": "2025-12-10T04:24:49.909284"
+    },
+    {
+      "task_id": "task_1765337094260",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test 0",
+      "execution_time": 0.647084,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:24:55.035331"
+    },
+    {
+      "task_id": "task_1765337097347",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test 1",
+      "execution_time": 0.527759,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:24:57.986913"
+    },
+    {
+      "task_id": "task_1765337100693",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test 2",
+      "execution_time": 0.601825,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:25:01.574071"
+    },
+    {
+      "task_id": "task_1765337104102",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test 3",
+      "execution_time": 0.558068,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:25:05.443249"
+    },
+    {
+      "task_id": "task_1765337107818",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test 4",
+      "execution_time": 0.579853,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:25:09.201638"
+    },
+    {
+      "task_id": "task_1765337112071",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test 5",
+      "execution_time": 0.606894,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:25:13.715272"
+    },
+    {
+      "task_id": "task_1765337116253",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test 6",
+      "execution_time": 0.531266,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:25:16.895784"
+    },
+    {
+      "task_id": "task_1765337119281",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test 7",
+      "execution_time": 0.561674,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:25:21.292686"
+    },
+    {
+      "task_id": "task_1765337123634",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test 8",
+      "execution_time": 0.560597,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:25:24.557909"
+    },
+    {
+      "task_id": "task_1765337159862",
+      "user_id": "free_user",
+      "agent_type": "career",
+      "query": "Apply for this software engineer job",
+      "execution_time": 0.034399,
+      "success": true,
+      "result_summary": "Agent: career",
+      "timestamp": "2025-12-10T04:25:59.996674"
+    },
+    {
+      "task_id": "task_1765337167472",
+      "user_id": "free_user",
+      "agent_type": "career",
+      "query": "Apply for this software engineer job",
+      "execution_time": 0.0,
+      "success": true,
+      "result_summary": "Agent: career",
+      "timestamp": "2025-12-10T04:26:07.583257"
+    },
+    {
+      "task_id": "task_1765337172094",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test 0",
+      "execution_time": 0.556119,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:26:13.645243"
+    },
+    {
+      "task_id": "task_1765337176153",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test 1",
+      "execution_time": 0.527767,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:26:16.790677"
+    },
+    {
+      "task_id": "task_1765337179175",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test 2",
+      "execution_time": 0.621008,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:26:20.245227"
+    },
+    {
+      "task_id": "task_1765337182531",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test 3",
+      "execution_time": 0.603534,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:26:23.856580"
+    },
+    {
+      "task_id": "task_1765337186232",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test 4",
+      "execution_time": 0.56758,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:26:27.179800"
+    },
+    {
+      "task_id": "task_1765337189753",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test 5",
+      "execution_time": 0.568888,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:26:30.432948"
+    },
+    {
+      "task_id": "task_1765337192749",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test 6",
+      "execution_time": 0.541339,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:26:33.387445"
+    },
+    {
+      "task_id": "task_1765337195716",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test 7",
+      "execution_time": 0.630915,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:26:37.417611"
+    },
+    {
+      "task_id": "task_1765337351643",
+      "user_id": "free_user",
+      "agent_type": "career",
+      "query": "Apply for this software engineer job",
+      "execution_time": 0.016219,
+      "success": true,
+      "result_summary": "Agent: career",
+      "timestamp": "2025-12-10T04:29:11.752738"
+    },
+    {
+      "task_id": "task_1765337357679",
+      "user_id": "free_user",
+      "agent_type": "career",
+      "query": "Apply for this software engineer job",
+      "execution_time": 0.005088,
+      "success": true,
+      "result_summary": "Agent: career",
+      "timestamp": "2025-12-10T04:29:17.786798"
+    },
+    {
+      "task_id": "task_1765337362222",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test 0",
+      "execution_time": 0.963609,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:29:24.466593"
+    },
+    {
+      "task_id": "task_1765337366785",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test 1",
+      "execution_time": 0.570548,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:29:28.050016"
+    },
+    {
+      "task_id": "task_1765337370376",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test 2",
+      "execution_time": 0.589395,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:29:31.064526"
+    },
+    {
+      "task_id": "task_1765337373577",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test 3",
+      "execution_time": 0.535465,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:29:34.213417"
+    },
+    {
+      "task_id": "task_1765337376598",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test 4",
+      "execution_time": 0.544576,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:29:37.932432"
+    },
+    {
+      "task_id": "task_1765337380548",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test 5",
+      "execution_time": 0.548395,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:29:42.044608"
+    },
+    {
+      "task_id": "task_1765337384553",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test 6",
+      "execution_time": 0.655877,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:29:45.330658"
+    },
+    {
+      "task_id": "task_1765337388160",
+      "user_id": "free_user",
+      "agent_type": "search",
+      "query": "test 7",
+      "execution_time": 0.568463,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:29:49.072992"
+    },
+    {
+      "task_id": "task_123",
+      "user_id": "test_user_123",
+      "agent_type": "career",
+      "query": "find jobs",
+      "execution_time": 1.5,
+      "success": true,
+      "result_summary": "Found 5 jobs",
+      "timestamp": "2025-12-10T04:30:13.829209"
+    },
+    {
+      "task_id": "task_1765337430181",
+      "user_id": "test_user",
+      "agent_type": "career",
+      "query": "Find me remote Python developer jobs",
+      "execution_time": 0.537833,
+      "success": true,
+      "result_summary": "Agent: career | Jobs: 20",
+      "timestamp": "2025-12-10T04:30:31.664090"
+    },
+    {
+      "task_id": "task_1765337440896",
+      "user_id": "test_user",
+      "agent_type": "search",
+      "query": "Test query 0",
+      "execution_time": 0.682061,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:30:41.682076"
+    },
+    {
+      "task_id": "task_1765337444028",
+      "user_id": "test_user",
+      "agent_type": "search",
+      "query": "Test query 1",
+      "execution_time": 0.564468,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:30:45.360226"
+    },
+    {
+      "task_id": "task_1765337447543",
+      "user_id": "test_user",
+      "agent_type": "search",
+      "query": "Test query 2",
+      "execution_time": 0.569139,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:30:48.211714"
+    },
+    {
+      "task_id": "task_1765337450463",
+      "user_id": "test_user",
+      "agent_type": "search",
+      "query": "Test query 3",
+      "execution_time": 0.563087,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:30:52.184787"
+    },
+    {
+      "task_id": "task_1765337454378",
+      "user_id": "test_user",
+      "agent_type": "search",
+      "query": "Test query 4",
+      "execution_time": 0.663343,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:30:56.156376"
+    },
+    {
+      "task_id": "task_1765337458556",
+      "user_id": "test_user",
+      "agent_type": "search",
+      "query": "Test query 5",
+      "execution_time": 0.572652,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:30:59.989215"
+    },
+    {
+      "task_id": "task_1765337462205",
+      "user_id": "test_user",
+      "agent_type": "search",
+      "query": "Test query 6",
+      "execution_time": 0.584689,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:31:03.954458"
+    },
+    {
+      "task_id": "task_1765337466561",
+      "user_id": "test_user",
+      "agent_type": "search",
+      "query": "Test query 7",
+      "execution_time": 0.58678,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:31:08.634557"
+    },
+    {
+      "task_id": "task_1765337470855",
+      "user_id": "test_user",
+      "agent_type": "search",
+      "query": "Test query 8",
+      "execution_time": 0.732146,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:31:12.532791"
+    },
+    {
+      "task_id": "task_1765337630450",
+      "user_id": "anonymous",
+      "agent_type": "career",
+      "query": "Find remote Python jobs",
+      "execution_time": 0.518329,
+      "success": true,
+      "result_summary": "Agent: career | Jobs: 20",
+      "timestamp": "2025-12-10T04:33:51.739111"
+    },
+    {
+      "task_id": "task_1765337633773",
+      "user_id": "anonymous",
+      "agent_type": "travel",
+      "query": "Book a flight to Berlin",
+      "execution_time": 2.091334,
+      "success": true,
+      "result_summary": "Agent: travel",
+      "timestamp": "2025-12-10T04:33:56.815309"
+    },
+    {
+      "task_id": "task_1765337638847",
+      "user_id": "anonymous",
+      "agent_type": "search",
+      "query": "What's the weather like?",
+      "execution_time": 0.682602,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:33:59.680278"
+    },
+    {
+      "task_id": "task_1765337641710",
+      "user_id": "anonymous",
+      "agent_type": "communication",
+      "query": "Send an email to john@example.com",
+      "execution_time": 0.781642,
+      "success": true,
+      "result_summary": "Agent: communication",
+      "timestamp": "2025-12-10T04:34:03.332930"
+    },
+    {
+      "task_id": "task_1765337645375",
+      "user_id": "anonymous",
+      "agent_type": "career",
+      "query": "Find Python developer jobs",
+      "execution_time": 0.522846,
+      "success": true,
+      "result_summary": "Agent: career | Jobs: 20",
+      "timestamp": "2025-12-10T04:34:06.210830"
+    },
+    {
+      "task_id": "task_1765337648229",
+      "user_id": "anonymous",
+      "agent_type": "career",
+      "query": "Apply for this job",
+      "execution_time": 0.0,
+      "success": true,
+      "result_summary": "Agent: career",
+      "timestamp": "2025-12-10T04:34:08.776438"
+    },
+    {
+      "task_id": "task_1765337652843",
+      "user_id": "anonymous",
+      "agent_type": "search",
+      "query": "Test query 0",
+      "execution_time": 0.604377,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:34:14.592016"
+    },
+    {
+      "task_id": "task_1765337656643",
+      "user_id": "anonymous",
+      "agent_type": "search",
+      "query": "Test query 1",
+      "execution_time": 0.550113,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:34:17.376873"
+    },
+    {
+      "task_id": "task_1765337659420",
+      "user_id": "anonymous",
+      "agent_type": "search",
+      "query": "Test query 2",
+      "execution_time": 0.625586,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:34:20.707945"
+    },
+    {
+      "task_id": "task_1765337662744",
+      "user_id": "anonymous",
+      "agent_type": "search",
+      "query": "Test query 3",
+      "execution_time": 0.684019,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:34:23.592617"
+    },
+    {
+      "task_id": "task_1765337665615",
+      "user_id": "anonymous",
+      "agent_type": "search",
+      "query": "Test query 4",
+      "execution_time": 0.660319,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:34:26.411475"
+    },
+    {
+      "task_id": "task_1765337668455",
+      "user_id": "anonymous",
+      "agent_type": "search",
+      "query": "Test query 5",
+      "execution_time": 0.578057,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:34:29.139050"
+    },
+    {
+      "task_id": "task_1765337671175",
+      "user_id": "anonymous",
+      "agent_type": "search",
+      "query": "Test query 6",
+      "execution_time": 0.560987,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:34:31.849807"
+    },
+    {
+      "task_id": "task_1765337673887",
+      "user_id": "anonymous",
+      "agent_type": "search",
+      "query": "Test query 7",
+      "execution_time": 0.535604,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:34:34.987637"
+    },
+    {
+      "task_id": "task_1765337677035",
+      "user_id": "anonymous",
+      "agent_type": "search",
+      "query": "Test query 8",
+      "execution_time": 0.54977,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:34:37.771237"
+    },
+    {
+      "task_id": "task_1765337679822",
+      "user_id": "anonymous",
+      "agent_type": "search",
+      "query": "Test query 9",
+      "execution_time": 0.578564,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:34:40.585078"
+    },
+    {
+      "task_id": "task_1765337682603",
+      "user_id": "anonymous",
+      "agent_type": "search",
+      "query": "Test query 10",
+      "execution_time": 0.547394,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:34:43.336430"
+    },
+    {
+      "task_id": "task_1765337685369",
+      "user_id": "anonymous",
+      "agent_type": "search",
+      "query": "Test query 11",
+      "execution_time": 0.513272,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:34:46.049847"
+    },
+    {
+      "task_id": "task_1765337688099",
+      "user_id": "anonymous",
+      "agent_type": "search",
+      "query": "Test query 12",
+      "execution_time": 0.482691,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:34:48.817763"
+    },
+    {
+      "task_id": "task_1765337690835",
+      "user_id": "anonymous",
+      "agent_type": "search",
+      "query": "Test query 13",
+      "execution_time": 0.514281,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:34:51.531446"
+    },
+    {
+      "task_id": "task_1765337693551",
+      "user_id": "anonymous",
+      "agent_type": "search",
+      "query": "Test query 14",
+      "execution_time": 10.416753,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:35:04.478666"
+    },
+    {
+      "task_id": "task_1765337708546",
+      "user_id": "anonymous",
+      "agent_type": "search",
+      "query": "Test",
+      "execution_time": 10.461412,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:35:19.391605"
+    },
+    {
+      "task_id": "task_1765337750145",
+      "user_id": "anonymous",
+      "agent_type": "search",
+      "query": "Test 0",
+      "execution_time": 10.43405,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:36:00.770640"
+    },
+    {
+      "task_id": "task_1765337762915",
+      "user_id": "anonymous",
+      "agent_type": "search",
+      "query": "Test 1",
+      "execution_time": 10.436294,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:36:13.542907"
+    },
+    {
+      "task_id": "task_1765337775696",
+      "user_id": "anonymous",
+      "agent_type": "search",
+      "query": "Test 2",
+      "execution_time": 10.4157,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:36:26.509925"
+    },
+    {
+      "task_id": "task_1765337788663",
+      "user_id": "anonymous",
+      "agent_type": "search",
+      "query": "Test 3",
+      "execution_time": 10.437589,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:36:39.382547"
+    },
+    {
+      "task_id": "task_1765337801524",
+      "user_id": "anonymous",
+      "agent_type": "search",
+      "query": "Test 4",
+      "execution_time": 10.419343,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:36:52.103560"
+    },
+    {
+      "task_id": "task_1765337814255",
+      "user_id": "anonymous",
+      "agent_type": "search",
+      "query": "Test 5",
+      "execution_time": 10.455597,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:37:04.902423"
+    },
+    {
+      "task_id": "task_1765337827051",
+      "user_id": "anonymous",
+      "agent_type": "search",
+      "query": "Test 6",
+      "execution_time": 10.442503,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:37:17.716452"
+    },
+    {
+      "task_id": "task_1765337839865",
+      "user_id": "anonymous",
+      "agent_type": "search",
+      "query": "Test 7",
+      "execution_time": 10.451721,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:37:30.492345"
+    },
+    {
+      "task_id": "task_1765337852627",
+      "user_id": "anonymous",
+      "agent_type": "search",
+      "query": "Test 8",
+      "execution_time": 10.422413,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:37:43.241342"
+    },
+    {
+      "task_id": "task_1765337865392",
+      "user_id": "anonymous",
+      "agent_type": "search",
+      "query": "Test 9",
+      "execution_time": 10.439169,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:37:56.216088"
+    },
+    {
+      "task_id": "task_1765337878371",
+      "user_id": "anonymous",
+      "agent_type": "search",
+      "query": "Test 10",
+      "execution_time": 10.408811,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:38:09.628338"
+    },
+    {
+      "task_id": "task_1765337891768",
+      "user_id": "anonymous",
+      "agent_type": "search",
+      "query": "Test 11",
+      "execution_time": 10.418429,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:38:22.360184"
+    },
+    {
+      "task_id": "task_1765338354201",
+      "user_id": "test@example.com",
+      "agent_type": "search",
+      "query": "Test query",
+      "execution_time": 10.432312,
+      "success": true,
+      "result_summary": "Agent: search",
+      "timestamp": "2025-12-10T04:46:04.911132"
+    },
+    {
+      "task_id": "task_1765398961503",
+      "user_id": "anonymous",
+      "agent_type": "career",
+      "query": "find python jobs",
+      "execution_time": true,
+      "success": 1.15342,
+      "result_summary": "",
+      "timestamp": "2025-12-10T21:36:02.766232"
+    },
+    {
+      "task_id": "task_1765399014388",
+      "user_id": "anonymous",
+      "agent_type": "career",
+      "query": "find python developer jobs",
+      "execution_time": true,
+      "success": 0.924071,
+      "result_summary": "",
+      "timestamp": "2025-12-10T21:36:55.337300"
+    },
+    {
+      "task_id": "task_1765399015344",
+      "user_id": "anonymous",
+      "agent_type": "search",
+      "query": "search for restaurants in Berlin",
+      "execution_time": true,
+      "success": 0.539238,
+      "result_summary": "",
+      "timestamp": "2025-12-10T21:36:55.915662"
+    },
+    {
+      "task_id": "task_1765399015915",
+      "user_id": "anonymous",
+      "agent_type": "search",
+      "query": "find movies about AI",
+      "execution_time": true,
+      "success": 0.577251,
+      "result_summary": "",
+      "timestamp": "2025-12-10T21:36:56.509248"
+    },
+    {
+      "task_id": "task_123",
+      "user_id": "test_user_123",
+      "agent_type": "career",
+      "query": "find jobs",
+      "execution_time": 1.5,
+      "success": true,
+      "result_summary": "Found 5 jobs",
+      "timestamp": "2025-12-10T21:51:30.297137"
+    },
+    {
+      "task_id": "task_123",
+      "user_id": "test_user_123",
+      "agent_type": "career",
+      "query": "find jobs",
+      "execution_time": 1.5,
+      "success": true,
+      "result_summary": "Found 5 jobs",
+      "timestamp": "2025-12-10T21:52:48.895492"
+    },
+    {
+      "task_id": "task_123",
+      "user_id": "test_user_123",
+      "agent_type": "career",
+      "query": "find jobs",
+      "execution_time": 1.5,
+      "success": true,
+      "result_summary": "Found 5 jobs",
+      "timestamp": "2025-12-10T21:53:05.253522"
+    },
+    {
+      "task_id": "task_123",
+      "user_id": "test_user_123",
+      "agent_type": "career",
+      "query": "find jobs",
+      "execution_time": 1.5,
+      "success": true,
+      "result_summary": "Found 5 jobs",
+      "timestamp": "2025-12-10T21:54:22.938390"
+    }
+  ]
+}
